@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "dictool",
+    "pmd_dic"
+]
