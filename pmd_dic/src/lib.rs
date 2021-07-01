@@ -15,9 +15,9 @@ pub struct KandChar {
     pub start_y: u16,
     pub glyth_width: u16,
     pub glyth_height: u16,
-    pub unk1: u16,
-    pub unk2: u16,
-    pub unk3: u16,
+    pub unk1: i16,
+    pub unk2: i16,
+    pub distance: u16,
     pub unk4: u16,
     pub unk5: u16,
 }
