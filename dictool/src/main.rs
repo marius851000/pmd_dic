@@ -1,15 +1,15 @@
 use anyhow::{Context, Result};
-use clap::Clap;
+use clap::Parser;
 use pmd_dic::KandFile;
 use std::{fs::File, io::{Seek, SeekFrom, Write}, path::PathBuf};
 /// dictool is a library used to read/write .dic file from Pokemon Super Mystery Dungeon (and maybe Gates To Infinity)
-#[derive(Clap)]
+#[derive(Parser)]
 struct Opts {
     #[clap(subcommand)]
     subcmd: SubCommand,
 }
 
-#[derive(Clap)]
+#[derive(Parser)]
 enum SubCommand {
     /// Read a .dic file, and form a resulting json file
     Decode(DecodeParameter),
@@ -17,7 +17,7 @@ enum SubCommand {
     Encode(EncodeParameter),
 }
 
-#[derive(Clap)]
+#[derive(Parser)]
 pub struct DecodeParameter {
     /// the input .dic file
     input: PathBuf,
@@ -25,7 +25,7 @@ pub struct DecodeParameter {
     output: PathBuf,
 }
 
-#[derive(Clap)]
+#[derive(Parser)]
 pub struct EncodeParameter {
     /// the input .json file
     input: PathBuf,
